@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Automation Suite" verbose="1"  parallel="classes" thread-count="2">
+  
+  <listeners>
+    <listener class-name="Utilities.ExtentReportManager"/>
+  </listeners>
+
+  <test name="Regression Tests">
+    <classes>
+      <class name="TestMethod.TestCase"/>
+      <class name="TestMethod.TestCase2"/>
+    </classes>
+  </test>
+
+</suite>
