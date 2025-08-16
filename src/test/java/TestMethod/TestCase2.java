@@ -4,12 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import PageObject.LoginPage;
+import Utilities.RetryAnalyzer;
 
 public class TestCase2 {
 	
 	WebDriver driver;
 	
-	  @Test
+	  @Test(retryAnalyzer = RetryAnalyzer.class)
 	  public void LoginPage1()
 	  {
 		  LoginPage login=new LoginPage(driver);

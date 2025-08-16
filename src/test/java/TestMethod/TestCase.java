@@ -8,10 +8,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import PageObject.CardBag;
@@ -21,7 +21,10 @@ import PageObject.FinalPage;
 import PageObject.LoginPage;
 import PageObject.ProductPage;
 import PageObject.YouCartPage;
+import Utilities.RetryAnalyzer;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
+
 
 public class TestCase {
 	
@@ -78,7 +81,7 @@ public class TestCase {
         result.setAttribute("driver", driver);
     }
     
-    @Test(priority=1)
+    @Test(priority=1,retryAnalyzer = RetryAnalyzer.class)
     public void LoginPage1()
     {
     	
@@ -92,7 +95,7 @@ public class TestCase {
     	
     }
     
-    @Test(priority=2)
+    @Test(priority=2,retryAnalyzer = RetryAnalyzer.class)
     public void ProductPageOperation() throws InterruptedException
     {
     	ProductPage p=new ProductPage(driver);
@@ -103,7 +106,7 @@ public class TestCase {
     }
     
     
-    @Test(priority=3)
+    @Test(priority=3,retryAnalyzer = RetryAnalyzer.class)
     public void Cardchecks() throws InterruptedException
     {
     	YouCartPage p1=new YouCartPage(driver);
@@ -111,7 +114,7 @@ public class TestCase {
     	p1.CheckOut();
     }
     
-    @Test(priority=4)
+    @Test(priority=4,retryAnalyzer = RetryAnalyzer.class)
     public void info() throws InterruptedException
     {
     	CheckOutInfo c= new CheckOutInfo(driver);
@@ -120,7 +123,7 @@ public class TestCase {
     	
     }
     
-    @Test(priority=5)
+    @Test(priority=5,retryAnalyzer = RetryAnalyzer.class)
     public void infoOverview() throws InterruptedException
     {
     	CheckOutOverview c= new CheckOutOverview(driver);
@@ -129,7 +132,7 @@ public class TestCase {
     }
     
     
-    @Test(priority=6)
+    @Test(priority=6,retryAnalyzer = RetryAnalyzer.class)
     public void card()
     {
     	FinalPage f= new FinalPage(driver);
