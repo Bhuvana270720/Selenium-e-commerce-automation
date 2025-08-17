@@ -22,7 +22,11 @@ public class ExtentReportManager implements ITestListener{
 	
 	public void onStart(ITestContext context) {
          
-		sparkreporter = new ExtentSparkReporter(System.getProperty("user.dir")+ "/target/myReport.html");
+		//sparkreporter = new ExtentSparkReporter(System.getProperty("user.dir")+ "/target/myReport.html");
+		//ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("target/myReport.html");
+		
+		sparkreporter = new ExtentSparkReporter("target/myReport.html");
+		
 		
 		sparkreporter.config().setDocumentTitle("Automated Report");
 		sparkreporter.config().setReportName("Functional Testing");
