@@ -69,7 +69,7 @@ public class TestCase2 {
 	    
 	
 	  @Test(retryAnalyzer = RetryAnalyzer.class)
-	  public void LoginPage1()
+	  public void LoginPage2()
 	  {
 		  LoginPage login=new LoginPage(driver);
 
